@@ -1,0 +1,98 @@
+  pip install cPickle
+  593  python3
+  594  python3 main.py 
+  595  vi main.py 
+  596  python3 main.py 
+  597  pip3 install scipy
+  598  python3 main.py 
+  599  pip3 install nltk
+  600  pip3 install gensim
+  601  python3 main.py 
+  602  vim extractSentenceWords.py
+  604  python3 main.py 
+  621  export NO_PROXY=${blk_no_proxy},artifactory.blackrock.com,git.blackrock.com,svn.blackrock.com,.blackrock.com,192.168.99.0/24,192.168.39.0/24,10.96.0.0/12
+  623  brew install icu4c --HEAD
+  624  brew update
+  625  brew install icu4c --HEAD
+  629  brew install boost-python3 
+  630  cp ~/Downloads/icu4c-67.1.catalina.bottle.tar.gz /Library/Caches/Homebrew/
+  631  mkdir /Library/Caches/Homwbrew
+  632  mkdir /Library/Caches/Homebrew
+  633  rm dir /Library/Caches/Homwbrew/
+  634  rmdir /Library/Caches/Homwbrew/
+  635  cp ~/Downloads/icu4c-67.1.catalina.bottle.tar.gz /Library/Caches/Homebrew/
+  636  brew install boost-python 
+  637  brew install boost-python --with-python3
+  638  brew install boost-python 
+  639  python2.7 main.py 
+  640  python main.py 
+  641  cd /usr/local/opt/boost-python/lib/
+  642  ls
+  643  brew install boost-python --with-python3
+  644  cd  > cd /usr/local/opt/boost-python/lib/
+  829  brew reinstall boost-python3
+  830  python3 --version
+  833  cd /usr/local/opt/boost-python3/lib
+  840  cd /usr/local/opt/boost-python3/lib
+  841  python3 setup.py install --yes USE_AVX_INSTRUCTIONS
+  842  pip3 install dlib
+  843  pip install dlib
+  844  export NO_PROXY=${blk_no_proxy},artifactory.blackrock.com,git.blackrock.com,svn.blackrock.com,.blackrock.com,192.168.99.0/24,192.168.39.0/24,10.96.0.0/12
+  845  pip install dlib
+  846  pip install cmake
+  847  pip install dlib
+  848  whereis dlib
+  849  which dlib
+  850* cd /usr/local/lib
+  851  cd /usr/local/opt/boost-python3/lib
+  852  ls
+  853  whereis dlib
+  854  cd ~/Documents/btap/IDEA/src/
+  855  python main.py 
+  856  python --version
+  857  python main.py 
+  858  ls -a
+  859  rm _lda.c _lda.so
+  860  ls -a
+  861  python build_pyx.py build_ext --inplace
+  862  cd ..
+  863   ./install.sh
+  864  pyenv version
+  865  pyenv local 3.6.2
+  866   ./install.sh
+  867  vi ~/.bash_profile
+  868   ./install.sh
+  869  pip install nltk
+  870  cd src/
+  871  python build_pyx.py build_ext --inplace
+  872  pip install Cython
+  873  python build_pyx.py build_ext --inplace
+  874  pip3 install Cython
+  875  python build_pyx.py build_ext --inplace
+  876  python3 --version
+  877  pip3 --version
+  878  pip --version
+  879  pip3 install Cython
+  880   python main.py
+  881  vim extractSentenceWords
+  882  vim extractSentenceWords.py
+  883   python main.py
+  884  vim extractSentenceWords.py
+  885  vim extractSentenceWords.py
+  886   python main.py
+  887  python
+  888   python main.py
+  889  python
+  890  bash /Applications/Python\ 3.6/Install\ Certificates.command 
+  891  python
+  892  python main.py 
+  893  vim extractSentenceWords.py
+  894  python main.py 
+  895  python
+  896  python main.py 
+  897  vi main.py 
+  898  python main.py 
+  899  vi main.py 
+  900  vim extractSentenceWords.py
+  901  python main.py 
+  914  python main.py

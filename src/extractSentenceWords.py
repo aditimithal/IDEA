@@ -8,15 +8,16 @@ import sys
 import re
 import itertools
 import logging
+from importlib import reload
 from gensim.models.phrases import Phrases
 logging.basicConfig(format='%(asctime)s: %(levelname)s: %(message)s', level=logging.INFO)
 
 from nltk.stem.wordnet import WordNetLemmatizer
 reload(sys)
-sys.setdefaultencoding('utf8')
+#sys.setdefaultencoding('utf8')
 
-unicode_punc_tbl = dict.fromkeys( i for i in xrange(128, sys.maxunicode)
-                      if unicodedata.category(unichr(i)).startswith('P') )
+unicode_punc_tbl = dict.fromkeys( i for i in range(128, sys.maxunicode)
+                      if unicodedata.category(chr(i)).startswith('P') )
 
 
 # def lemmatize(word):
@@ -32,14 +33,14 @@ unicode_punc_tbl = dict.fromkeys( i for i in xrange(128, sys.maxunicode)
 def extractSentenceWords(doc, remove_url=True, remove_punc="utf-8", min_length=1, lemma=False, sent=True, replace_digit=False):
     if remove_punc:
         # ensure doc_u is in unicode
-        if not isinstance(doc, unicode):
+        if not isinstance(doc, str):
             encoding = remove_punc
             doc_u = doc.decode(encoding)
         else:
             doc_u = doc
         # remove unicode punctuation marks, keep ascii punctuation marks
         doc_u = doc_u.translate(unicode_punc_tbl)
-        if not isinstance(doc, unicode):
+        if not isinstance(doc, str):
             doc = doc_u.encode(encoding)
         else:
             doc = doc_u
@@ -62,12 +63,14 @@ def extractSentenceWords(doc, remove_url=True, remove_punc="utf-8", min_length=1
         # words = re.split( r"\s+\+|^\+|\+?[\-*\/&%=_<>\[\]~\|\@\$]+\+?|\'\s+|\'s\s+|\'s$|\s+\'|^\'|\'$|\$|\\|\s+", sentence )
         words = re.split(r"[\s+,\-*\/&%=_<>\[\]~\|\@\$\\]",
                          sentence)
+        #print(words)
         words = filter( lambda w: w, words)
-        words = map(lambda w: w.lower(), words)
+        words = list(map(lambda w: w.lower(), words))
+        #print(words)
         if replace_digit:
-            map(lambda w: re.sub(r'\d+', '<digit>', w), words)
+            words = list(map(lambda w: re.sub(r'\d+', '<digit>', w), words))
         if lemma:
-            words = map(lambda w: wnl.lemmatize(w, 'v'), words)
+            words = list(map(lambda w: wnl.lemmatize(w, 'v'), words))
         if len(words) >= min_length:
             wordsInSentences.append(words)
             wc += len(words)

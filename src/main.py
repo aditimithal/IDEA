@@ -9,7 +9,7 @@ import logging
 import itertools
 import time
 import json
-import cPickle
+import pickle as cPickle
 import re
 import numpy as np
 from scipy import sparse
@@ -162,7 +162,7 @@ def build_AOLDA_input_version(timed_reviews=None):
             version_dict[review_ver][1].append(review['rate'])
 
         # re-arrange the version sequence
-        for ver in sorted(version_dict.iterkeys(), key=lambda s: map(int, s.split('.'))):
+        for ver in sorted(version_dict.keys(), key=lambda s: list(map(int, s.split('.')))):
             if len(version_dict[ver][0]) > 50:          # skip versions with not enough reviews
                 tag.append(ver)
                 input.append(version_dict[ver][0])
@@ -211,7 +211,7 @@ def generate_labeling_candidates(OLDA_input):
         for word in dic.values():
             if '_' in word:
                 phrase = word
-                words, tags = zip(*nltk.pos_tag(phrase.split(b'_')))
+                words, tags = zip(*nltk.pos_tag(phrase.split('_')))
                 match = False
                 for tag in tags:
                     if re.match(r"^NN", tag):
